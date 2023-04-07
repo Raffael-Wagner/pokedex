@@ -1,5 +1,4 @@
 const pokemonList = document.getElementById("pokemonList");
-const loadMoreButton = document.getElementById("loadMoreButton");
 const filterType = document.getElementById("filterType");
 const refreshButton = document.getElementById("refreshButton");
 
@@ -41,21 +40,6 @@ function loadPokemonItens(offset, limit) {
 }
 
 loadPokemonItens(offset, limit);
-
-loadMoreButton.addEventListener("click", (event) => {
-  event.preventDefault();
-  offset += limit;
-  const qtdRecordsWithNexPage = offset + limit;
-
-  if (qtdRecordsWithNexPage >= maxRecords) {
-    const newLimit = maxRecords - offset;
-    loadPokemonItens(offset, newLimit);
-
-    loadMoreButton.parentElement.removeChild(loadMoreButton);
-  } else {
-    loadPokemonItens(offset, limit);
-  }
-});
 
 function getPokemonsByType(type) {
   if (type === "all") {
