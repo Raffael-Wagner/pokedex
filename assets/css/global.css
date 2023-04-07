@@ -1,0 +1,80 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f8f8f8;
+  font-family: "Roboto", sans-serif;
+  color: #333;
+  background-image: url(/bckg.jpg);
+}
+
+.content {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  margin-top: 1rem;
+  gap: 4rem;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.logo img {
+  height: 3rem;
+}
+
+.pokedex-control .formulario label + * {
+  outline: none;
+  width: 100%;
+  font-size: 1.1rem;
+  border-radius: 4px;
+}
+
+.pokedex-control .formulario {
+  margin: 0 0.5rem;
+  font-size: 1.1rem;
+  display: grid;
+  grid-template-columns: 3rem minmax(13rem, 15rem);
+  grid-gap: 0.5rem;
+  align-items: center;
+  font: "Roboto";
+  text-transform: uppercase;
+}
+
+.pokedex-control {
+  margin: 4rem 0 3rem;
+  display: grid;
+  grid-gap: 0.5rem;
+  justify-content: center;
+}
+
+@media screen and (min-width: 380px) {
+  .pokemons {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 576px) {
+  .pokemons {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .pokemons {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
