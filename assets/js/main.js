@@ -40,7 +40,7 @@ const selectPokemon = async (id) => {
 };
 
 const displayPopup = (pokemon) => {
-  const imagem = pokemon.sprites.other.dream_world.front_default;
+  const imagem = pokemon.sprites.other.home.front_default;
   const types = pokemon.types.map((typeSlot) => typeSlot.type.name);
   const [type] = types;
 
@@ -63,9 +63,9 @@ const displayPopup = (pokemon) => {
   <img id="pokemon-img" src="${imagem}"
            alt="${pokemon.name}">
            <div id="data">
-           <h4>Base stats</h4>
+           <h2>Estatísticas básicas</h2>
            <div id="stats">
-           <div class="bar-inner">
+           <div class="interna">
            ${pokemon.stats
              .map(
                (name_stats) => `<p class="${type}">${name_stats.stat.name}</p>`
@@ -78,7 +78,7 @@ const displayPopup = (pokemon) => {
              .join("")}</div>
              
  </div>
- <div class="stats-hw">
+ <div class="statsHw">
  <p class="${type}">Height:${(pokemon.height / 10).toFixed(2)} m</p>
  <p class="${type}">Weight:${pokemon.weight / 10} kg</p>
  <div>
@@ -112,6 +112,8 @@ function loadPokemonItens(offset, limit) {
 
 loadPokemonItens(offset, limit);
 
+/*Filtro pokémon por tipo*/
+
 function getPokemonsByType(type) {
   if (type === "all") {
     return pokeApi.getPokemons(0, maxRecords);
@@ -143,6 +145,8 @@ filterType.addEventListener("change", () => {
     });
   }
 });
+
+/*Botão de refresh*/
 
 refreshButton.addEventListener("click", () => {
   pokemonList.innerHTML = "";

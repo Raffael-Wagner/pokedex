@@ -61,6 +61,20 @@ body {
   justify-content: center;
 }
 
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: #ffcb05;
+  border-radius: 20px;
+}
+::-webkit-scrollbar-track {
+  background: #385daa;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #a3850b;
+}
+
 @media screen and (min-width: 380px) {
   .pokemons {
     grid-template-columns: 1fr 1fr;
