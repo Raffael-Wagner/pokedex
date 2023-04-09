@@ -102,7 +102,7 @@ function loadPokemonItens(offset, limit) {
     const newHtml = pokemons.map(convertPokemonToLi).join("");
     pokemonList.innerHTML += newHtml;
   })
-}:
+};
 
 loadPokemonItens(offset, limit);
 
