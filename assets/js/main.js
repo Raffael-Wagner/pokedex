@@ -101,14 +101,8 @@ function loadPokemonItens(offset, limit) {
   pokeApi.getPokemons(offset, limit).then((pokemons = []) => {
     const newHtml = pokemons.map(convertPokemonToLi).join("");
     pokemonList.innerHTML += newHtml;
-
-    if (filterType.value === "all") {
-      loadMoreButton.style.display = "block";
-    } else {
-      loadMoreButton.style.display = "none";
-    }
-  });
-}
+  })
+}:
 
 loadPokemonItens(offset, limit);
 
